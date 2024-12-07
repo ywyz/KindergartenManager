@@ -1,0 +1,60 @@
+@startuml 账户管理数据表关系图
+
+title 账户管理数据表关系图
+
+entity users {
+  * id : INT [PK, AI]
+  * username : VARCHAR(255) [UNIQUE, NOT NULL]
+  * email : VARCHAR(255) [UNIQUE, NOT NULL]
+  * password_hash : VARCHAR(255) [NOT NULL]
+  * name : VARCHAR(255)
+  * phone : VARCHAR(20)
+  * created_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP]
+  * updated_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP]
+}
+
+entity roles {
+  * id : INT [PK, AI]
+  * name : VARCHAR(255) [UNIQUE, NOT NULL]
+  * description : TEXT
+  * created_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP]
+  * updated_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP]
+}
+
+entity permissions {
+  * id : INT [PK, AI]
+  * name : VARCHAR(255) [UNIQUE, NOT NULL]
+  * description : TEXT
+  * created_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP]
+  * updated_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP]
+}
+
+entity user_roles {
+  * user_id : INT [FK, PK]
+  * role_id : INT [FK, PK]
+  * created_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP]
+  * updated_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP]
+}
+
+entity role_permissions {
+  * role_id : INT [FK, PK]
+  * permission_id : INT [FK, PK]
+  * created_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP]
+  * updated_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP]
+}
+
+entity audit_logs {
+  * id : INT [PK, AI]
+  * user_id : INT [FK]
+  * action : VARCHAR(255) [NOT NULL]
+  * details : TEXT
+  * created_at : TIMESTAMP [DEFAULT CURRENT_TIMESTAMP]
+}
+
+users ||--o{ user_roles : has
+user_roles }|..|{ roles : has
+roles ||--o{ role_permissions : has
+role_permissions }|..|{ permissions : has
+users ||--o{ audit_logs : logs
+
+@enduml

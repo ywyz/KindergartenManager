@@ -1,0 +1,50 @@
+@startuml 登录流程图
+
+title 登录流程图
+
+actor User
+
+participant "用户认证模块" as AuthModule
+participant "验证码服务" as VerificationService
+participant "邮件服务" as EmailService
+
+User -> AuthModule: 1. 访问登录页面
+AuthModule -> User: 2. 显示登录表单
+User -> AuthModule: 3. 输入用户名/邮箱和密码
+AuthModule -> AuthModule: 4. 验证用户名/邮箱和密码
+alt 验证成功
+    AuthModule -> AuthModule: 5. 创建会话（JWT令牌）
+    AuthModule -> User: 6. 登录成功，跳转到主页
+else 验证失败
+    AuthModule -> User: 7. 显示错误信息（如“无效的用户名或密码”）
+end
+
+User -> AuthModule: 8. 访问注册页面
+AuthModule -> User: 9. 显示注册表单
+User -> AuthModule: 10. 输入注册信息（用户名、邮箱、密码等）
+AuthModule -> AuthModule: 11. 验证注册信息
+alt 验证成功
+    AuthModule -> EmailService: 12. 发送激活邮件
+    AuthModule -> User: 13. 注册成功，提示用户检查邮箱
+else 验证失败
+    AuthModule -> User: 14. 显示错误信息（如“邮箱已被使用”）
+end
+
+User -> AuthModule: 15. 访问忘记密码页面
+AuthModule -> User: 16. 显示忘记密码表单
+User -> AuthModule: 17. 输入注册时使用的邮箱地址
+AuthModule -> VerificationService: 18. 生成一次性验证码
+VerificationService -> EmailService: 19. 发送验证码邮件
+EmailService -> User: 20. 接收验证码邮件
+User -> AuthModule: 21. 输入验证码
+AuthModule -> VerificationService: 22. 验证验证码
+alt 验证成功
+    AuthModule -> User: 23. 显示重置密码表单
+    User -> AuthModule: 24. 输入新密码
+    AuthModule -> AuthModule: 25. 更新密码
+    AuthModule -> User: 26. 密码重置成功
+else 验证失败
+    AuthModule -> User: 27. 显示错误信息（如“验证码错误”）
+end
+
+@enduml

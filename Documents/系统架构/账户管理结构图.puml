@@ -1,0 +1,84 @@
+@startuml 账户管理流程图
+
+title 账户管理流程图
+
+actor User
+actor Admin
+actor SuperAdmin
+
+participant "用户认证模块" as AuthModule
+participant "个人信息管理模块" as ProfileModule
+participant "密码修改模块" as PasswordModule
+participant "退出登录模块" as LogoutModule
+participant "管理员级别的账户管理模块" as AdminAccountModule
+participant "权限管理与角色分配模块" as PermissionModule
+participant "邮件服务" as EmailService
+
+== 用户个人信息管理 ==
+User -> ProfileModule: 1. 查看个人信息
+ProfileModule -> User: 2. 显示个人资料页面
+User -> ProfileModule: 3. 更新个人信息
+ProfileModule -> ProfileModule: 4. 验证并更新信息
+ProfileModule -> User: 5. 更新成功反馈
+
+== 密码修改 ==
+User -> PasswordModule: 6. 请求修改密码
+PasswordModule -> User: 7. 显示密码修改表单
+User -> PasswordModule: 8. 提供当前密码和新密码
+PasswordModule -> PasswordModule: 9. 验证当前密码
+alt 验证成功
+    PasswordModule -> PasswordModule: 10. 更新密码（bcrypt加密）
+    PasswordModule -> EmailService: 11. 发送密码修改确认邮件
+    PasswordModule -> User: 12. 密码修改成功
+else 验证失败
+    PasswordModule -> User: 13. 显示错误信息（如“当前密码错误”）
+end
+
+== 退出登录 ==
+User -> LogoutModule: 14. 请求退出登录
+LogoutModule -> LogoutModule: 15. 清理会话信息
+LogoutModule -> User: 16. 重定向到登录页
+
+== 管理员级别的账户管理 ==
+Admin -> AdminAccountModule: 17. 添加用户
+AdminAccountModule -> AdminAccountModule: 18. 验证并创建用户
+AdminAccountModule -> Admin: 19. 创建成功反馈
+
+Admin -> AdminAccountModule: 20. 删除用户
+AdminAccountModule -> AdminAccountModule: 21. 删除用户及其信息
+AdminAccountModule -> Admin: 22. 删除成功反馈
+
+Admin -> AdminAccountModule: 23. 修改用户信息
+AdminAccountModule -> AdminAccountModule: 24. 验证并更新用户信息
+AdminAccountModule -> Admin: 25. 更新成功反馈
+
+Admin -> AdminAccountModule: 26. 查询用户信息
+AdminAccountModule -> AdminAccountModule: 27. 搜索用户列表
+AdminAccountModule -> Admin: 28. 显示用户列表
+
+Admin -> AdminAccountModule: 29. 批量导入用户
+AdminAccountModule -> AdminAccountModule: 30. 解析并导入用户数据
+AdminAccountModule -> Admin: 31. 导入结果报告
+
+== 权限管理与角色分配 ==
+Admin -> PermissionModule: 32. 定义角色
+PermissionModule -> PermissionModule: 33. 创建或更新角色
+PermissionModule -> Admin: 34. 角色创建/更新反馈
+
+Admin -> PermissionModule: 35. 分配角色
+PermissionModule -> PermissionModule: 36. 验证并分配角色
+PermissionModule -> Admin: 37. 角色分配反馈
+
+SuperAdmin -> PermissionModule: 38. 自定义权限
+PermissionModule -> PermissionModule: 39. 创建或更新权限
+PermissionModule -> SuperAdmin: 40. 权限创建/更新反馈
+
+Admin -> PermissionModule: 41. 设置权限继承
+PermissionModule -> PermissionModule: 42. 验证并设置继承关系
+PermissionModule -> Admin: 43. 继承关系反馈
+
+Admin -> PermissionModule: 44. 获取审计日志
+PermissionModule -> PermissionModule: 45. 查询权限变更历史
+PermissionModule -> Admin: 46. 显示审计日志
+
+@enduml

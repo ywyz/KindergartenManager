@@ -1,0 +1,61 @@
+@startuml KindergardenManager
+!include <C4/C4_Context.puml>
+!define RECTANGLE rectangle
+
+RECTANGLE "用户界面层" {
+    RECTANGLE "前端展示"
+    RECTANGLE "用户交互与反馈"
+}
+
+RECTANGLE "服务层" {
+    RECTANGLE "核心功能模块" {
+        RECTANGLE "教职工管理"
+        RECTANGLE "课程信息管理"
+        RECTANGLE "维修管理"
+        RECTANGLE "计划管理"
+    }
+    RECTANGLE "辅助功能模块" {
+        RECTANGLE "食谱信息管理"
+        RECTANGLE "食谱评价管理"
+        RECTANGLE "食材出库入库管理"
+        RECTANGLE "陪餐、留样照片管理"
+        RECTANGLE "物品管理"
+        RECTANGLE "设备管理"
+        RECTANGLE "资料收集管理"
+        RECTANGLE "活动报道管理"
+    }
+}
+
+RECTANGLE "支持层" {
+    RECTANGLE "可复用组件" {
+        RECTANGLE "用户权限管理"
+        RECTANGLE "数据查询与导出"
+        RECTANGLE "通知提醒机制"
+        RECTANGLE "文件上传与管理"
+        RECTANGLE "表单验证"
+        RECTANGLE "版本控制"
+    }
+    RECTANGLE "第三方集成和服务" {
+        RECTANGLE "数据备份与恢复"
+        RECTANGLE "安全性与合规性"
+        RECTANGLE "日志记录与监控"
+    }
+}
+
+RECTANGLE "数据层" {
+    RECTANGLE "数据库" {
+        RECTANGLE "用户数据"
+        RECTANGLE "教职工数据"
+        RECTANGLE "课程数据"
+        RECTANGLE "维修数据"
+        RECTANGLE "计划数据"
+        RECTANGLE "材料数据"
+        RECTANGLE "活动数据"
+    }
+}
+
+"用户界面层" --> "服务层"
+"服务层" --> "支持层"
+"支持层" --> "数据层"
+
+@enduml
