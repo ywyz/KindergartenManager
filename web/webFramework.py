@@ -3,36 +3,41 @@
 Author: ywyz admin@ywyz.tech
 Date: 2025-01-20 01:55:06
 LastEditors: ywyz admin@ywyz.tech
-LastEditTime: 2025-01-20 05:51:56
-FilePath: /github/KindergardenManager/web/webFramework.py
+LastEditTime: 2025-01-20 06:48:53
+FilePath: /KindergardenManager/web/webFramework.py
 Description: https://github.com/ywyz
 
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved. 
+Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.  
 '''
 '''
 TODO:
-    1.显示不出logo,需要修复
     2.左侧导航栏位置需要调整
     3.主页需要完成上部导航栏
+    4.主页需要完成中部内容
 '''
 from nicegui import ui
+from nicegui_toolkit import inject_layout_tool
+
+inject_layout_tool()
 
 
 class WebFramework():                   # 网页框架
     def __init__(self):
-        pass
+        pass 
 
     def show_footer(self):              # 显示底部              
-        with ui.footer().style('background-color:rgb(50, 113, 201);'):
+        with ui.footer().style('background-color:rgb(50, 113, 201);').classes('items-center justify-center'):
             ui.label('© 2025 幼儿园信息管理系统')
             ui.label('powered by Python NiceGUI ywyz')
 
     def show_header(self):              # 显示头部
         with ui.header().style('background-color:rgb(50, 113, 201);')\
                 .classes('items-center justify-between'):
-            ui.image('/static/logo.ico')
             ui.button(on_click=lambda: self.left_drawer.toggle(), icon='menu')\
                 .props('flat color=white')
+            ui.image('./web/static/title.png').\
+                style('width: 150px; height: 30px')
+
 
     def show_left_drawer(self):         # 显示左侧导航栏
         with ui.left_drawer(top_corner=True, bottom_corner=True)\
@@ -49,7 +54,10 @@ class WebFramework():                   # 网页框架
 
     def show_all_elements(self):
         self.show_header()
-        self.show_left_drawer()
+        # self.show_left_drawer()
         self.show_footer()
 
 
+webframework = WebFramework()
+webframework.show_all_elements()
+ui.run()
