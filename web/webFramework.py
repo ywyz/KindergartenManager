@@ -30,15 +30,15 @@ class WebFramework():                   # 网页框架
 
     def show_header(self):              # 显示头部
         with ui.left_drawer(fixed=False).style('background-color: #ebf1fa').props('bordered') as left_drawer:
-            ui.label('幼儿园信息管理系统')
-            ui.label('首页')
-            ui.label('幼儿园信息')
-            ui.label('教师信息')
-            ui.label('学生信息')
-            ui.label('班级信息')
-            ui.label('课程信息')
-            ui.label('活动信息')
-            ui.label('退出')
+            ui.label('幼儿园信息管理系统').style('font-size: 20px; font-weight: bold;')
+            ui.label('首页').style('font-size: 20px; font-weight: bold;')
+            ui.label('幼儿园信息').style('font-size: 20px; font-weight: bold;')
+            ui.label('教师信息').style('font-size: 20px; font-weight: bold;')
+            ui.label('学生信息').style('font-size: 20px; font-weight: bold;')
+            ui.label('班级信息').style('font-size: 20px; font-weight: bold;')
+            ui.label('课程信息').style('font-size: 20px; font-weight: bold;')
+            ui.label('活动信息').style('font-size: 20px; font-weight: bold;')
+            ui.label('退出').style('font-size: 20px; font-weight: bold;')
         with ui.header().style('background-color:rgb(50, 113, 201);')\
                 .classes('items-center justify-between'):
             ui.button(on_click=lambda: left_drawer.toggle(), icon='menu')\
