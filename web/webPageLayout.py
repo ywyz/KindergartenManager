@@ -18,7 +18,7 @@ from nicegui import ui
 
 
 
-class WebFramework():                   # 网页框架
+class WebPageLayout():                   # 网页框架
     def __init__(self):
         pass
 
@@ -56,6 +56,6 @@ class WebFramework():                   # 网页框架
         # self.show_left_drawer()
 
 
-webframework = WebFramework()
+webframework = WebPageLayout()
 webframework.show_all_elements()
 ui.run()
