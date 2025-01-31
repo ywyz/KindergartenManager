@@ -54,8 +54,3 @@ class WebPageLayout():                   # 网页框架
         self.show_header()
         self.show_footer()
         # self.show_left_drawer()
-
-
-webframework = WebPageLayout()
-webframework.show_all_elements()
-ui.run()
