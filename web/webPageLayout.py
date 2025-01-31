@@ -1,12 +1,12 @@
 '''
 Author: ywyz admin@ywyz.tech
 Date: 2025-01-20 01:55:06
-LastEditors: ywyz admin@ywyz.tech
-LastEditTime: 2025-01-20 06:49:44
+LastEditors: ywyz
+LastEditTime: 2025-01-31 11:37:57
 FilePath: /KindergardenManager/web/webFramework.py
 Description: https://github.com/ywyz
 
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
+Copyright (c) 2025 by admin@ywyz.tech, All Rights Reserved.
 '''
 '''
 TODO:
