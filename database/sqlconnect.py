@@ -1,3 +1,11 @@
+'''
+Date: 2025-07-07 15:24:20
+Author: ywyz
+LastModifiedBy: ywyz
+Github: https://github.com/ywyz
+LastEditors: ywyz
+LastEditTime: 2025-07-10 15:30:34
+'''
 import os, pymysql
 
 
@@ -6,7 +14,7 @@ class SQLConnect:
         self.host = os.getenv("MYSQL_HOST", "localhost")
         self.user = os.getenv("MYSQL_USER", "root")
         self.password = os.getenv("MYSQL_PASSWORD", "")
-        self.database = os.getenv("MYSQL_DATABASE", "kindergarden")
+        self.database = os.getenv("MYSQL_DATABASE", "kindergardenmanager")
 
     def connect(self):
         return pymysql.connect(
