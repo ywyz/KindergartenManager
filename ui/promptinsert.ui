@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>提示词插入系统</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>180</y>
+     <width>161</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QPushButton" name="commit">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>159</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>提交</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="clear">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>159</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>清除</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="exit">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>159</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>退出</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>40</y>
+     <width>711</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>提示词名称：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="promptname"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>年级组：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QComboBox" name="grade_choose">
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <property name="currentText">
+       <string>小班</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>小班</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>中班</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>大班</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>科目：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QComboBox" name="subject_choose">
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <property name="currentText">
+       <string>科学</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>科学</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>艺术</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>健康</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>语言</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>社会</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>晨间谈话</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>集体活动</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>户外活动</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>专用室——沙画坊</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>专用室——科学室</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>专用室——阅览室</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>专用室——烘焙坊</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>专用室——建构坊</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>专用室——扎染坊</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>区域活动</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>提示词内容：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPlainTextEdit" name="prompt"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>输出格式：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPlainTextEdit" name="outputformat"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
