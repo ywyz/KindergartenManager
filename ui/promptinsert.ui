@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>提示词插入系统</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>1070</x>
@@ -82,7 +82,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>270</x>
@@ -173,6 +173,16 @@
       <item>
        <property name="text">
         <string>科学</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>体能大循环——集体活动</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>体能大循环——自选活动</string>
        </property>
       </item>
       <item>
