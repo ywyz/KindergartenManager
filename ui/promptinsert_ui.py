@@ -212,7 +212,6 @@ class Ui_Form(object):
             "content": prompt_content,
             "output_format": output_format
         }
-        print (prompt)
         if not prompt_name or not prompt_content or not output_format:
             QMessageBox.critical(None, "错误", "请填写所有必填字段！")
             return None

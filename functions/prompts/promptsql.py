@@ -4,9 +4,8 @@ Author: ywyz
 LastModifiedBy: ywyz
 Github: https://github.com/ywyz
 LastEditors: ywyz
-LastEditTime: 2025-07-19 09:19:51
+LastEditTime: 2025-07-19 13:13:46
 '''
-import time
 from database.sqlconnect import SQLConnect
 
 class PromptSql:
@@ -15,7 +14,7 @@ class PromptSql:
 
     def insert_prompt(self, prompt):
         # 假设 ai_templates 表有 name, grade, subject, content, output_format 字段
-        query = "INSERT INTO ai_templates (promptname, prompt, outputformat,gradename,outputsubject) VALUES (%s,%s, %s, %s, %s)"
+        query = "INSERT INTO ai_templates (promptname, prompt, outputformat,gradename,outputsubject) VALUES (%s, %s, %s, %s, %s)"
         params = (
             prompt.get("name"),
             prompt.get("content"),
