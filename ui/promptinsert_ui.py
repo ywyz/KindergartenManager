@@ -19,6 +19,10 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFormLayout, QLabel,
     QLineEdit, QPlainTextEdit, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
@@ -113,6 +117,7 @@ class Ui_Form(object):
         self.subject_choose.addItem("")
         self.subject_choose.addItem("")
         self.subject_choose.addItem("")
+        self.subject_choose.addItem("")
         self.subject_choose.setObjectName(u"subject_choose")
         self.subject_choose.setEditable(True)
 
@@ -148,6 +153,10 @@ class Ui_Form(object):
 
 
         QMetaObject.connectSlotsByName(Form)
+        self.commit.clicked.connect(lambda: self.commitsql(self.insert_prompt()))
+        self.clear.clicked.connect(self.clear_fields)
+        self.exit.clicked.connect(self.exit_form)
+
     # setupUi
 
     def retranslateUi(self, Form):
@@ -190,6 +199,7 @@ class Ui_Form(object):
         如果有必填字段未填写，则弹出错误提示。
         :return: dict or None
         """
+        from PySide6.QtWidgets import QMessageBox
         prompt_name = self.promptname.text()
         grade = self.grade_choose.currentText()
         subject = self.subject_choose.currentText()
@@ -202,10 +212,10 @@ class Ui_Form(object):
             "content": prompt_content,
             "output_format": output_format
         }
+        print (prompt)
         if not prompt_name or not prompt_content or not output_format:
-            QWidget().setWindowTitle("Error").setText("Please fill in all fields.")
+            QMessageBox.critical(None, "错误", "请填写所有必填字段！")
             return None
-        self.exit_form()
         return prompt
 
     def clear_fields(self):
@@ -229,25 +239,27 @@ class Ui_Form(object):
         :param prompt: dict
         :return: bool
         """
+        from PySide6.QtWidgets import QMessageBox
         from functions.prompts.promptsql import PromptSql
+        if prompt is None:
+            return False
         prompt_sql = PromptSql()
         result = prompt_sql.insert_prompt(prompt)
         if result:
-            QWidget().setWindowTitle("Success").setText("Prompt inserted successfully.")
+            QMessageBox.information(None, "成功", "提示词插入成功！")
+            self.exit_form()
             return True
         else:
-            QWidget().setWindowTitle("Error").setText("Failed to insert prompt.")
+            QMessageBox.critical(None, "错误", "提示词插入失败！")
             return False
 
-    self.commit.clicked.connect(lambda: self.commitsql(self.insert_prompt()))
-    self.clear.clicked.connect(self.clear_fields)
-    self.exit.clicked.connect(self.exit_form)
 
 
-def create_prompt_insert_ui():
+if __name__ == "__main__":
     app = QApplication([])
     form = QWidget()
     ui = Ui_Form()
     ui.setupUi(form)
+
     form.show()
-    return ui
+    sys.exit(app.exec())

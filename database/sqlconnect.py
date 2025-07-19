@@ -4,17 +4,17 @@ Author: ywyz
 LastModifiedBy: ywyz
 Github: https://github.com/ywyz
 LastEditors: ywyz
-LastEditTime: 2025-07-10 15:30:34
+LastEditTime: 2025-07-13 20:23:32
 '''
 import os, pymysql
 
 
 class SQLConnect:
     def __init__(self):
-        self.host = os.getenv("MYSQL_HOST", "localhost")
-        self.user = os.getenv("MYSQL_USER", "root")
-        self.password = os.getenv("MYSQL_PASSWORD", "")
-        self.database = os.getenv("MYSQL_DATABASE", "kindergardenmanager")
+        self.host = os.getenv("SQL_HOST", "localhost")
+        self.user = os.getenv("SQL_USER", "root")
+        self.password = os.getenv("SQL_PASSWORD", "")
+        self.database = os.getenv("SQL_DATABASE", "kindergardenmanager")
 
     def connect(self):
         return pymysql.connect(
