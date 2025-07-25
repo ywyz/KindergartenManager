@@ -4,7 +4,7 @@ Author: ywyz
 LastModifiedBy: ywyz
 Github: https://github.com/ywyz
 LastEditors: ywyz
-LastEditTime: 2025-07-13 20:23:32
+LastEditTime: 2025-07-19 13:15:44
 '''
 import os, pymysql
 
@@ -46,15 +46,21 @@ class SQLConnect:
             self.close(connection)
 
     def get_all(self, table):
+        if table not in self.ALLOWED_TABLES:
+            raise ValueError(f"Table '{table}' is not allowed.")
         query = f"SELECT * FROM {table}"
         return self.execute_query(query)
-
     def get_by_id(self, table, id):
+        if table not in self.ALLOWED_TABLES:
+            raise ValueError(f"Table '{table}' is not allowed.")
         query = f"SELECT * FROM {table} WHERE id = %s"
         return self.execute_query(query, (id,))
 
 
+
     def insert(self, table, data):
+        if table not in self.ALLOWED_TABLES:
+            raise ValueError(f"Invalid table name: {table}")
         columns = ', '.join(data.keys())
         placeholders = ', '.join(['%s'] * len(data))
         query = f"INSERT INTO {table} ({columns}) VALUES ({placeholders})"
