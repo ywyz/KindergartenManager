@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFormLayout, QLabel,
     QLineEdit, QPlainTextEdit, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
 
+
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
@@ -30,16 +31,16 @@ class Ui_Form(object):
         self.verticalLayout_2 = QVBoxLayout(self.layoutWidget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.commit = QPushButton(self.layoutWidget)
-        self.commit.setObjectName(u"commit")
+        self.submit = QPushButton(self.layoutWidget)
+        self.submit.setObjectName(u"submit")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.commit.sizePolicy().hasHeightForWidth())
-        self.commit.setSizePolicy(sizePolicy)
-        self.commit.setMinimumSize(QSize(159, 0))
+        sizePolicy.setHeightForWidth(self.submit.sizePolicy().hasHeightForWidth())
+        self.submit.setSizePolicy(sizePolicy)
+        self.submit.setMinimumSize(QSize(159, 0))
 
-        self.verticalLayout_2.addWidget(self.commit)
+        self.verticalLayout_2.addWidget(self.submit)
 
         self.clear = QPushButton(self.layoutWidget)
         self.clear.setObjectName(u"clear")
@@ -142,19 +143,19 @@ class Ui_Form(object):
 
         self.formLayout.setWidget(4, QFormLayout.ItemRole.FieldRole, self.outputformat)
 
-
         self.retranslateUi(Form)
+        self.clear.clicked.connect(self.prompt.clear)
+        self.exit.clicked.connect(Form.close)
 
         self.grade_choose.setCurrentIndex(0)
         self.subject_choose.setCurrentIndex(0)
-
 
         QMetaObject.connectSlotsByName(Form)
     # setupUi
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"\u63d0\u793a\u8bcd\u63d2\u5165\u7cfb\u7edf", None))
-        self.commit.setText(QCoreApplication.translate("Form", u"\u63d0\u4ea4", None))
+        self.submit.setText(QCoreApplication.translate("Form", u"\u63d0\u4ea4", None))
         self.clear.setText(QCoreApplication.translate("Form", u"\u6e05\u9664", None))
         self.exit.setText(QCoreApplication.translate("Form", u"\u9000\u51fa", None))
         self.label.setText(QCoreApplication.translate("Form", u"\u63d0\u793a\u8bcd\u540d\u79f0\uff1a", None))
