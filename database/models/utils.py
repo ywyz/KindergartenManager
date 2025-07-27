@@ -1,13 +1,3 @@
-r'''
-Author: ywyz@admin@ywyz.tech
-Date: 2025-07-27 13:37:09
-LastEditors: ywyz@admin@ywyz.tech
-LastEditTime: 2025-07-27 13:42:04
-FilePath: \KindergardenManager\database\utils.py
-Description: https://github.com/ywyz
-
-Copyright (c) 2025 by $ywyz@admin@ywyz.tech, All Rights Reserved. 
-'''
 from .BaseModel import BaseModel
 from peewee import AutoField, CharField, TextField, DateTimeField, SQL
 

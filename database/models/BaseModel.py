@@ -1,14 +1,3 @@
-'''
-Author: ywyz@admin@ywyz.tech
-Date: 2025-07-26 13:31:10
-LastEditors: ywyz@admin@ywyz.tech
-LastEditTime: 2025-07-27 15:01:48
-FilePath: \KindergardenManager\database\models\BaseModel.py
-Description: https://github.com/ywyz
-
-Copyright (c) 2025 by $ywyz@admin@ywyz.tech, All Rights Reserved. 
-'''
-
 import os
 from peewee import Model, AutoField, DateTimeField, MySQLDatabase
 
