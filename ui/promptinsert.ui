@@ -148,7 +148,7 @@
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="subject">
       <property name="font">
        <font>
         <pointsize>13</pointsize>
@@ -157,104 +157,6 @@
       <property name="text">
        <string>科目：</string>
       </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QComboBox" name="subject_choose">
-      <property name="editable">
-       <bool>true</bool>
-      </property>
-      <property name="currentText">
-       <string>科学</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>科学</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>体能大循环——集体活动</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>体能大循环——自选活动</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>艺术</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>健康</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>语言</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>社会</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>晨间谈话</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>集体活动</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>户外活动</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——沙画坊</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——科学室</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——阅览室</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——烘焙坊</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——建构坊</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——扎染坊</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>区域活动</string>
-       </property>
-      </item>
      </widget>
     </item>
     <item row="3" column="0">
@@ -286,6 +188,9 @@
     </item>
     <item row="4" column="1">
      <widget class="QPlainTextEdit" name="outputformat"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEdit"/>
     </item>
    </layout>
   </widget>

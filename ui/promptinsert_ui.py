@@ -19,7 +19,6 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFormLayout, QLabel,
     QLineEdit, QPlainTextEdit, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
 
-
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
@@ -92,34 +91,11 @@ class Ui_Form(object):
 
         self.formLayout.setWidget(1, QFormLayout.ItemRole.FieldRole, self.grade_choose)
 
-        self.label_3 = QLabel(self.layoutWidget1)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setFont(font)
+        self.subject = QLabel(self.layoutWidget1)
+        self.subject.setObjectName(u"subject")
+        self.subject.setFont(font)
 
-        self.formLayout.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_3)
-
-        self.subject_choose = QComboBox(self.layoutWidget1)
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.addItem("")
-        self.subject_choose.setObjectName(u"subject_choose")
-        self.subject_choose.setEditable(True)
-
-        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole, self.subject_choose)
+        self.formLayout.setWidget(2, QFormLayout.ItemRole.LabelRole, self.subject)
 
         self.label_4 = QLabel(self.layoutWidget1)
         self.label_4.setObjectName(u"label_4")
@@ -143,12 +119,18 @@ class Ui_Form(object):
 
         self.formLayout.setWidget(4, QFormLayout.ItemRole.FieldRole, self.outputformat)
 
+        self.lineEdit = QLineEdit(self.layoutWidget1)
+        self.lineEdit.setObjectName(u"lineEdit")
+
+        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole, self.lineEdit)
+
+
         self.retranslateUi(Form)
         self.clear.clicked.connect(self.prompt.clear)
         self.exit.clicked.connect(Form.close)
 
         self.grade_choose.setCurrentIndex(0)
-        self.subject_choose.setCurrentIndex(0)
+
 
         QMetaObject.connectSlotsByName(Form)
     # setupUi
@@ -165,26 +147,7 @@ class Ui_Form(object):
         self.grade_choose.setItemText(2, QCoreApplication.translate("Form", u"\u5927\u73ed", None))
 
         self.grade_choose.setCurrentText(QCoreApplication.translate("Form", u"\u5c0f\u73ed", None))
-        self.label_3.setText(QCoreApplication.translate("Form", u"\u79d1\u76ee\uff1a", None))
-        self.subject_choose.setItemText(0, QCoreApplication.translate("Form", u"\u79d1\u5b66", None))
-        self.subject_choose.setItemText(1, QCoreApplication.translate("Form", u"\u4f53\u80fd\u5927\u5faa\u73af\u2014\u2014\u96c6\u4f53\u6d3b\u52a8", None))
-        self.subject_choose.setItemText(2, QCoreApplication.translate("Form", u"\u4f53\u80fd\u5927\u5faa\u73af\u2014\u2014\u81ea\u9009\u6d3b\u52a8", None))
-        self.subject_choose.setItemText(3, QCoreApplication.translate("Form", u"\u827a\u672f", None))
-        self.subject_choose.setItemText(4, QCoreApplication.translate("Form", u"\u5065\u5eb7", None))
-        self.subject_choose.setItemText(5, QCoreApplication.translate("Form", u"\u8bed\u8a00", None))
-        self.subject_choose.setItemText(6, QCoreApplication.translate("Form", u"\u793e\u4f1a", None))
-        self.subject_choose.setItemText(7, QCoreApplication.translate("Form", u"\u6668\u95f4\u8c08\u8bdd", None))
-        self.subject_choose.setItemText(8, QCoreApplication.translate("Form", u"\u96c6\u4f53\u6d3b\u52a8", None))
-        self.subject_choose.setItemText(9, QCoreApplication.translate("Form", u"\u6237\u5916\u6d3b\u52a8", None))
-        self.subject_choose.setItemText(10, QCoreApplication.translate("Form", u"\u4e13\u7528\u5ba4\u2014\u2014\u6c99\u753b\u574a", None))
-        self.subject_choose.setItemText(11, QCoreApplication.translate("Form", u"\u4e13\u7528\u5ba4\u2014\u2014\u79d1\u5b66\u5ba4", None))
-        self.subject_choose.setItemText(12, QCoreApplication.translate("Form", u"\u4e13\u7528\u5ba4\u2014\u2014\u9605\u89c8\u5ba4", None))
-        self.subject_choose.setItemText(13, QCoreApplication.translate("Form", u"\u4e13\u7528\u5ba4\u2014\u2014\u70d8\u7119\u574a", None))
-        self.subject_choose.setItemText(14, QCoreApplication.translate("Form", u"\u4e13\u7528\u5ba4\u2014\u2014\u5efa\u6784\u574a", None))
-        self.subject_choose.setItemText(15, QCoreApplication.translate("Form", u"\u4e13\u7528\u5ba4\u2014\u2014\u624e\u67d3\u574a", None))
-        self.subject_choose.setItemText(16, QCoreApplication.translate("Form", u"\u533a\u57df\u6d3b\u52a8", None))
-
-        self.subject_choose.setCurrentText(QCoreApplication.translate("Form", u"\u79d1\u5b66", None))
+        self.subject.setText(QCoreApplication.translate("Form", u"\u79d1\u76ee\uff1a", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"\u63d0\u793a\u8bcd\u5185\u5bb9\uff1a", None))
         self.label_5.setText(QCoreApplication.translate("Form", u"\u8f93\u51fa\u683c\u5f0f\uff1a", None))
     # retranslateUi
