@@ -6,7 +6,7 @@
  * @LastEditors: ywyz
  * @LastEditTime: 2024-12-07 12:25:21
 -->
-# KindergardenManager
+# KindergartenManager
 想要完成以下功能
 #### 主页
 - [ ] header
