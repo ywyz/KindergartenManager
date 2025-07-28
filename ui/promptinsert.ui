@@ -24,7 +24,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QPushButton" name="commit">
+     <widget class="QPushButton" name="submit">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -120,7 +120,7 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QComboBox" name="grade_choose">
+     <widget class="QComboBox" name="grade">
       <property name="editable">
        <bool>true</bool>
       </property>
@@ -148,7 +148,7 @@
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="qsubject">
       <property name="font">
        <font>
         <pointsize>13</pointsize>
@@ -157,104 +157,6 @@
       <property name="text">
        <string>科目：</string>
       </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QComboBox" name="subject_choose">
-      <property name="editable">
-       <bool>true</bool>
-      </property>
-      <property name="currentText">
-       <string>科学</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>科学</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>体能大循环——集体活动</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>体能大循环——自选活动</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>艺术</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>健康</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>语言</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>社会</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>晨间谈话</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>集体活动</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>户外活动</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——沙画坊</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——科学室</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——阅览室</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——烘焙坊</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——建构坊</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>专用室——扎染坊</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>区域活动</string>
-       </property>
-      </item>
      </widget>
     </item>
     <item row="3" column="0">
@@ -287,9 +189,45 @@
     <item row="4" column="1">
      <widget class="QPlainTextEdit" name="outputformat"/>
     </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="subject_2"/>
+    </item>
    </layout>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>prompt</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1150</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>679</x>
+     <y>260</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exit</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1150</x>
+     <y>365</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>639</x>
+     <y>359</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

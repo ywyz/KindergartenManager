@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "aliyun.ywyz.tech",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "阿里云",
+            "username": "ywyz",
+            "database": "kindergarten"
+        }
+    ]
+}
