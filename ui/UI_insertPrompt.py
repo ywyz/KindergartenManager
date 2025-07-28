@@ -12,13 +12,11 @@ class PromptInsertWindow(QWidget, Ui_Form):
         self.clear.clicked.connect(self.clear_fields)
         self.exit.clicked.connect(self.exit_form)
 
-
-
     def on_submit(self):
         result = add_prompt(
             name=self.promptname.text(),
-            grade=self.grade_choose.currentText(),
-            subject=self.lineEdit.text(),
+            grade=self.grade.text(),
+            subject=self.subject.text(),
             content=self.prompt.toPlainText(),
             output_format=self.outputformat.toPlainText()
         )
@@ -29,8 +27,8 @@ class PromptInsertWindow(QWidget, Ui_Form):
 
     def clear_fields(self):
         self.promptname.clear()
-        self.grade_choose.setCurrentIndex(0)
-        self.lineEdit.clear()
+        self.grade.setCurrentIndex(0)
+        self.subject.clear()
         self.prompt.clear()
         self.outputformat.clear()
 
@@ -44,4 +42,3 @@ if __name__ == "__main__":
     window = PromptInsertWindow()
     window.show()
     app.exec()
-    window.exit_form = lambda: window.close()  # 退出窗口的简化方法

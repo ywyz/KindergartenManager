@@ -1,4 +1,4 @@
-from models.utils import prompts
+from database.models.utils import prompts
 
 Models = [prompts]
 

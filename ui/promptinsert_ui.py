@@ -82,20 +82,20 @@ class Ui_Form(object):
 
         self.formLayout.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_2)
 
-        self.grade_choose = QComboBox(self.layoutWidget1)
-        self.grade_choose.addItem("")
-        self.grade_choose.addItem("")
-        self.grade_choose.addItem("")
-        self.grade_choose.setObjectName(u"grade_choose")
-        self.grade_choose.setEditable(True)
+        self.grade = QComboBox(self.layoutWidget1)
+        self.grade.addItem("")
+        self.grade.addItem("")
+        self.grade.addItem("")
+        self.grade.setObjectName(u"grade")
+        self.grade.setEditable(True)
 
-        self.formLayout.setWidget(1, QFormLayout.ItemRole.FieldRole, self.grade_choose)
+        self.formLayout.setWidget(1, QFormLayout.ItemRole.FieldRole, self.grade)
 
-        self.subject = QLabel(self.layoutWidget1)
-        self.subject.setObjectName(u"subject")
-        self.subject.setFont(font)
+        self.qsubject = QLabel(self.layoutWidget1)
+        self.qsubject.setObjectName(u"qsubject")
+        self.qsubject.setFont(font)
 
-        self.formLayout.setWidget(2, QFormLayout.ItemRole.LabelRole, self.subject)
+        self.formLayout.setWidget(2, QFormLayout.ItemRole.LabelRole, self.qsubject)
 
         self.label_4 = QLabel(self.layoutWidget1)
         self.label_4.setObjectName(u"label_4")
@@ -119,17 +119,17 @@ class Ui_Form(object):
 
         self.formLayout.setWidget(4, QFormLayout.ItemRole.FieldRole, self.outputformat)
 
-        self.lineEdit = QLineEdit(self.layoutWidget1)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.subject = QLineEdit(self.layoutWidget1)
+        self.subject.setObjectName(u"subject_2")
 
-        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole, self.lineEdit)
+        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole, self.subject)
 
 
         self.retranslateUi(Form)
         self.clear.clicked.connect(self.prompt.clear)
         self.exit.clicked.connect(Form.close)
 
-        self.grade_choose.setCurrentIndex(0)
+        self.grade.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Form)
@@ -142,12 +142,12 @@ class Ui_Form(object):
         self.exit.setText(QCoreApplication.translate("Form", u"\u9000\u51fa", None))
         self.label.setText(QCoreApplication.translate("Form", u"\u63d0\u793a\u8bcd\u540d\u79f0\uff1a", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"\u5e74\u7ea7\u7ec4\uff1a", None))
-        self.grade_choose.setItemText(0, QCoreApplication.translate("Form", u"\u5c0f\u73ed", None))
-        self.grade_choose.setItemText(1, QCoreApplication.translate("Form", u"\u4e2d\u73ed", None))
-        self.grade_choose.setItemText(2, QCoreApplication.translate("Form", u"\u5927\u73ed", None))
+        self.grade.setItemText(0, QCoreApplication.translate("Form", u"\u5c0f\u73ed", None))
+        self.grade.setItemText(1, QCoreApplication.translate("Form", u"\u4e2d\u73ed", None))
+        self.grade.setItemText(2, QCoreApplication.translate("Form", u"\u5927\u73ed", None))
 
-        self.grade_choose.setCurrentText(QCoreApplication.translate("Form", u"\u5c0f\u73ed", None))
-        self.subject.setText(QCoreApplication.translate("Form", u"\u79d1\u76ee\uff1a", None))
+        self.grade.setCurrentText(QCoreApplication.translate("Form", u"\u5c0f\u73ed", None))
+        self.qsubject.setText(QCoreApplication.translate("Form", u"\u79d1\u76ee\uff1a", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"\u63d0\u793a\u8bcd\u5185\u5bb9\uff1a", None))
         self.label_5.setText(QCoreApplication.translate("Form", u"\u8f93\u51fa\u683c\u5f0f\uff1a", None))
     # retranslateUi
