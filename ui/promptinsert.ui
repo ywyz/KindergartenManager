@@ -120,7 +120,7 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QComboBox" name="grade_choose">
+     <widget class="QComboBox" name="grade">
       <property name="editable">
        <bool>true</bool>
       </property>
