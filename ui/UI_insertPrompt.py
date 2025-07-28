@@ -15,7 +15,7 @@ class PromptInsertWindow(QWidget, Ui_Form):
     def on_submit(self):
         result = add_prompt(
             name=self.promptname.text(),
-            grade=self.grade.text(),
+            grade=self.grade.currentText(),
             subject=self.subject.text(),
             content=self.prompt.toPlainText(),
             output_format=self.outputformat.toPlainText()

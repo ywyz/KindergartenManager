@@ -120,7 +120,7 @@ class Ui_Form(object):
         self.formLayout.setWidget(4, QFormLayout.ItemRole.FieldRole, self.outputformat)
 
         self.subject = QLineEdit(self.layoutWidget1)
-        self.subject.setObjectName(u"subject_2")
+        self.subject.setObjectName(u"subject")
 
         self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole, self.subject)
 
