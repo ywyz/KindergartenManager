@@ -1,3 +1,6 @@
+"""
+插入提示词界面
+"""
 from PySide6.QtWidgets import QWidget, QApplication, QMessageBox
 from ui.promptinsert_ui import Ui_Form
 from functions.prompts.prompt import add_prompt
@@ -36,9 +39,3 @@ class PromptInsertWindow(QWidget, Ui_Form):
         self.close()
         # 这里可以添加其他退出逻辑，比如保存状态等
 
-
-if __name__ == "__main__":
-    app = QApplication([])
-    window = PromptInsertWindow()
-    window.show()
-    app.exec()
